@@ -227,7 +227,6 @@ class _AnyLinkPreviewState extends State<AnyLinkPreview> {
 
   @override
   Widget build(BuildContext context) {
-    final WebInfo? info = _info as WebInfo?;
     double _height =
         (widget.displayDirection == UIDirection.UIDirectionHorizontal ||
                 !widget.showMultimedia)
@@ -256,7 +255,7 @@ class _AnyLinkPreviewState extends State<AnyLinkPreview> {
         image: img.trim() == "" ? _errorImage : img,
       );
     }
-
+    final WebInfo? info = _info as WebInfo?;
     return _info == null
         ? widget.errorWidget ??
             _buildPlaceHolder(widget.backgroundColor!, _height)
